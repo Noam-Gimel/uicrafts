@@ -78,7 +78,7 @@ const DropdownMenu = () => {
     return (
             <div className="dropdown-menu">
                 {activeMenu === 'main' ? (
-                    <ScrollPanel style={{ width: '350px', maxHeight: '420px' }}>
+                    <ScrollPanel style={{ maxHeight: '420px' }}>
                         <ul className="menu-items">
                             {menuItems.map((item, index) => (
                                 <li key={index} onClick={() => handleItemClick(item)}>

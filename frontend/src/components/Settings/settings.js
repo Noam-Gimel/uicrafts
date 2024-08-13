@@ -4,6 +4,7 @@ import './SettingsBar.css';
 import { Button } from 'primereact/button';
 import { Slider } from "primereact/slider";
 import { InputText } from "primereact/inputtext";
+import DropdownMenu from "../ChatDropdown/DropdownMenu";
 
 
 export function SettingsBar() {
@@ -14,26 +15,28 @@ export function SettingsBar() {
 
   return (
     <div className="settings-bar">
-      <h2 className="settings-title">Crafting Zone</h2>
-      <div className="tab-navigation">
-        <button
-          className={`tab-button ${activeTab === 'General' ? 'active' : ''}`}
-          onClick={() => setActiveTab('General')}
-        >
-          General
-        </button>
-        <button
-          className={`tab-button ${activeTab === 'Colors' ? 'active' : ''}`}
-          onClick={() => setActiveTab('Colors')}
-        >
-          Colors
-        </button>
-        <button
-          className={`tab-button ${activeTab === 'Effects' ? 'active' : ''}`}
-          onClick={() => setActiveTab('Effects')}
-        >
-          Effects
-        </button>
+      <div className="settings-bar-header">
+        <h2 className="settings-title">Crafting Zone</h2>
+        <div className="tab-navigation">
+          <button
+            className={`tab-button ${activeTab === 'General' ? 'active' : ''}`}
+            onClick={() => setActiveTab('General')}
+          >
+            General
+          </button>
+          <button
+            className={`tab-button ${activeTab === 'Colors' ? 'active' : ''}`}
+            onClick={() => setActiveTab('Colors')}
+          >
+            Colors
+          </button>
+          <button
+            className={`tab-button ${activeTab === 'Effects' ? 'active' : ''}`}
+            onClick={() => setActiveTab('Effects')}
+          >
+            Effects
+          </button>
+        </div>
       </div>
       <div className="tab-content">
         {activeTab === 'General' && (
@@ -64,13 +67,14 @@ export function SettingsBar() {
           </div>
         )}
         {activeTab === 'Effects' && (
-          <div className="settings-options">
-            <div className="settings-option">
-              {/* <label htmlFor="blurEffect">Blur Effect</label> */}
-              <label htmlFor="blurValue">Blur Effect</label>
-              <Slider className='slider w-14rem' id='blurValue' value={blurValue} onChange={(e) => setBlurValue(e.value)}  />
-            </div>
-          </div>
+          <DropdownMenu />
+          // <div className="settings-options">
+          //   <div className="settings-option">
+          //     {/* <label htmlFor="blurEffect">Blur Effect</label> */}
+          //     <label htmlFor="blurValue">Blur Effect</label>
+          //     <Slider className='slider w-14rem' id='blurValue' value={blurValue} onChange={(e) => setBlurValue(e.value)}  />
+          //   </div>
+          // </div>
         )}
       </div>
     </div>
