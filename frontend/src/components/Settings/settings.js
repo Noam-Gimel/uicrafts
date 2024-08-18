@@ -1,16 +1,12 @@
 import React, { useState } from "react";
-import cn from './settingstyle.module.css';
 import './SettingsBar.css';
-import { Button } from 'primereact/button';
-import { Slider } from "primereact/slider";
 import { InputText } from "primereact/inputtext";
 import DropdownMenu from "../OptionItemsMenu/DropdownMenu";
-
+// import { ButtonContext } from "../../context/ButtonContext";
 
 export function SettingsBar() {
     const [activeTab, setActiveTab] = useState('General');
     const [textValue, setTextValue] = useState('');
-    const [blurValue, setBlurValue] = useState(null);
     const [backgroundColor, setBackgroundColor] = useState(null);
 
   return (

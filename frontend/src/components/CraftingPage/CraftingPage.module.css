@@ -1,0 +1,17 @@
+.Container {
+    display: flex;
+    height: 100vh;
+    margin: 0px 40px 0px 40px;
+}
+.buttonDesignWrapper {
+    flex: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.settingsBarWrapper {
+    flex: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
