@@ -4,7 +4,7 @@ import './SettingsBar.css';
 import { Button } from 'primereact/button';
 import { Slider } from "primereact/slider";
 import { InputText } from "primereact/inputtext";
-import DropdownMenu from "../ChatDropdown/DropdownMenu";
+import DropdownMenu from "../OptionItemsMenu/DropdownMenu";
 
 
 export function SettingsBar() {
