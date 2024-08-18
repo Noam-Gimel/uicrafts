@@ -5,6 +5,9 @@
   --primary-accent: #2EC4B6;
   --secondary-accent: #AC3B61;
   --primary-text: #fffdfb;
+
+  --widget-light: #e8e8e8;
+  --widget-dark: #212121;
 }
 
 body {
