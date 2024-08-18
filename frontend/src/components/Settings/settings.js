@@ -1,13 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import './SettingsBar.css';
 import { InputText } from "primereact/inputtext";
+import { Button } from "primereact/button";
 import DropdownMenu from "../OptionItemsMenu/DropdownMenu";
-// import { ButtonContext } from "../../context/ButtonContext";
+import { ButtonContext } from "../../context/ButtonContext";
+ 
 
 export function SettingsBar() {
-    const [activeTab, setActiveTab] = useState('General');
-    const [textValue, setTextValue] = useState('');
-    const [backgroundColor, setBackgroundColor] = useState(null);
+  const { buttonSettings, updateButtonSettings } = useContext(ButtonContext);
+
+  const [activeTab, setActiveTab] = useState('General');
+
+  const handleBackgroundColorChange = (e) => {
+    updateButtonSettings('backgroundColor', e.target.value);
+  };
+  const handleTextColorChange = (e) => {
+    updateButtonSettings('textColor', e.target.value);
+  };
+  const handleButtoTextnChange = (e) => {
+    updateButtonSettings('buttonText', e.target.value);
+  };
+
+  const handleDirectionUp = () => {
+    updateButtonSettings('hoverEffectDirection', 'translateY(-100%)');
+  }
+  const handleDirectionDown = () => {
+    updateButtonSettings('hoverEffectDirection', 'translateY(100%)');
+
+  }
+  const handleDirectionLeft = () => {
+    updateButtonSettings('hoverEffectDirection', 'translateX(-100%)');
+
+  }
+  const handleDirectionRight = () => {
+    updateButtonSettings('hoverEffectDirection', 'translateX(100%)');
+  }
 
   return (
     <div className="settings-bar">
@@ -39,26 +66,47 @@ export function SettingsBar() {
           <div className="settings-options">
             <div className="settings-option">
                 <label htmlFor="ButtonText">Text</label>
-                <InputText variant="filled" id="ButtonText" placeholder="Craft" value={textValue} className="p-inputtext-sm" onChange={(e) => setTextValue(e.target.value)} />
+                <InputText variant="filled" id="ButtonText" placeholder="Craft" value={buttonSettings.buttonText} className="p-inputtext-sm" onChange={handleButtoTextnChange} />
             </div>
           </div>
         )}
         {activeTab === 'Colors' && (
           <div className="settings-options">
             <div className="settings-option">
-              {/* <label htmlFor="primaryColor">Primary Color</label> */}
-              <div>Primary Color</div>
+              {/* <label htmlFor="TextColor">Primary Color</label> */}
+              <div>Text Color</div>
               <input 
                 type="color"
-                id="primaryColor" 
-                value={backgroundColor}
-                onChange={e => setBackgroundColor(e.target.value)}
+                id="TextColor" 
+                value={buttonSettings.textColor}
+                onChange={handleTextColorChange}
                 />
             </div>
             <div className="settings-option">
-              {/* <label htmlFor="secondaryColor">Secondary Color</label> */}
-              <div>Secondary Color</div>
-              <input type="color" id="secondaryColor" />
+              {/* <label htmlFor="bgColor">Secondary Color</label> */}
+              <div>Background Color</div>
+              <input 
+                type="color" 
+                id="bgColor" 
+                value={buttonSettings.backgroundColor}
+                onChange={handleBackgroundColorChange}
+                />
+            </div>
+            <div className="settings-option">
+              <div className='arrows-buttons-container'>
+                  <div className='arrow-button'>
+                    <Button className="arrow-button-style" icon="pi pi-angle-right" rounded text raised onClick={handleDirectionLeft} />
+                  </div>
+                  <div className='arrow-button'>
+                    <Button className="arrow-button-style" icon="pi pi-angle-left" rounded text size="small" raised onClick={handleDirectionRight}/>
+                  </div>                
+                  <div className='arrow-button'>
+                    <Button className="arrow-button-style" icon="pi pi-angle-down" rounded text raised onClick={handleDirectionUp} />
+                  </div>                
+                  <div className='arrow-button'>
+                    <Button className="arrow-button-style" icon="pi pi-angle-up" rounded text raised onClick={handleDirectionDown} />
+                  </div>
+              </div>
             </div>
           </div>
         )}

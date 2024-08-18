@@ -99,3 +99,16 @@
 .slider {
   padding: 5px;
 }
+.arrows-buttons-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding: 5px;
+}
+.arrow-button {
+  padding: 5px;
+}
+.arrow-button-style {
+  background-color: var(--primary-accent);
+  color: var(--secondary-accent);
+}

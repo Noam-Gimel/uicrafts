@@ -4,9 +4,11 @@ export const ButtonContext = createContext();
 
 export const ButtonProvider = ({ children }) => {
   const [buttonSettings, setButtonSettings] = useState({
-    backgroundColor: '#ffffff',
-    textColor: '#000000',
+    backgroundColor: '#CF6565',
+    textColor: '#ffffff',
+    buttonText: 'Button',
     borderRadius: '5px',
+    hoverEffectDirection: 'translateX(-100%)'
     // Add more states as needed
   });
 
