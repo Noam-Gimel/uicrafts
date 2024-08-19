@@ -13,6 +13,7 @@ export const ExampleButton = () => {
     font-weight: 700;
     color: ${buttonSettings.textColor};
     border: 3px solid ${buttonSettings.backgroundColor};
+    border-radius: ${buttonSettings.borderRadius}px;
     cursor: pointer;
     position: relative;
     background-color: transparent;

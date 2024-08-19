@@ -49,16 +49,16 @@
 
 .tab-content {
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin-top: 5px;
-
+  margin-top: 7px;
 }
 
 .settings-options {
   display: flex;
   flex-direction: column;
   gap: 15px;
+  padding: 12px;
+  width: 100%;
 }
 
 .settings-option {
@@ -72,7 +72,6 @@
   font-size: 16px;
   color: var(--primary-text);
 }
-.settings-option 
 
 .settings-option input[type='text'],
 .settings-option input[type='range'] {
@@ -111,4 +110,40 @@
 .arrow-button-style {
   background-color: var(--primary-accent);
   color: var(--secondary-accent);
+}
+.section-divider {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  color: rgb(240, 240, 240);
+  --text-divider-gap: 7px;
+}
+
+.section-divider::before, .section-divider::after {
+  content: '';
+  height: 1px;
+  background-color: rgba(192, 192, 192, 0.767);
+  flex-grow: 1;
+}
+
+.section-divider::before {
+  margin-right: var(--text-divider-gap);
+}
+
+.section-divider::after {
+  margin-left: var(--text-divider-gap);
+}
+
+.two-options-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.small-option-wrapper {
+  padding: 3px;
+  flex: 30%;
+}
+.big-option-wrapper {
+  padding: 3px;
+  flex: 70%;
 }

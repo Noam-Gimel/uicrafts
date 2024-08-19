@@ -7,7 +7,7 @@ export const ButtonProvider = ({ children }) => {
     backgroundColor: '#CF6565',
     textColor: '#ffffff',
     buttonText: 'Button',
-    borderRadius: '5px',
+    borderRadius: '0',
     hoverEffectDirection: 'translateX(-100%)'
     // Add more states as needed
   });

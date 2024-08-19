@@ -4,6 +4,9 @@ import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import DropdownMenu from "../OptionItemsMenu/DropdownMenu";
 import { ButtonContext } from "../../context/ButtonContext";
+import { Divider } from 'primereact/divider';
+import { Slider } from "primereact/slider";
+import { InputNumber } from 'primereact/inputnumber';
  
 
 export function SettingsBar() {
@@ -21,6 +24,10 @@ export function SettingsBar() {
     updateButtonSettings('buttonText', e.target.value);
   };
 
+  const handleBorderRadiusChange = (e) => {
+    updateButtonSettings('borderRadius', e.value);
+  }
+
   const handleDirectionUp = () => {
     updateButtonSettings('hoverEffectDirection', 'translateY(-100%)');
   }
@@ -35,6 +42,7 @@ export function SettingsBar() {
   const handleDirectionRight = () => {
     updateButtonSettings('hoverEffectDirection', 'translateX(100%)');
   }
+
 
   return (
     <div className="settings-bar">
@@ -65,8 +73,22 @@ export function SettingsBar() {
         {activeTab === 'General' && (
           <div className="settings-options">
             <div className="settings-option">
+                {/* <div className="section-divider">Button Text</div> */}
+                {/* <Divider align="left">
+                  <div className="inline-flex align-items-center">
+                      <b>Text</b>
+                  </div>
+                </Divider> */}
                 <label htmlFor="ButtonText">Text</label>
                 <InputText variant="filled" id="ButtonText" placeholder="Craft" value={buttonSettings.buttonText} className="p-inputtext-sm" onChange={handleButtoTextnChange} />
+            </div>
+            <div className="two-options-container">
+              <div className="big-option-wrapper">
+                <Slider min='0' max='30' value={buttonSettings.borderRadius} onChange={handleBorderRadiusChange} className="w-full" />
+              </div>
+              <div className="small-option-wrapper">
+                <InputNumber maxLength={3} inputId="percent" value={buttonSettings.borderRadius} onValueChange={handleBorderRadiusChange} prefix="%" />
+              </div>
             </div>
           </div>
         )}
