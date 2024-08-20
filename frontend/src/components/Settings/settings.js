@@ -87,7 +87,7 @@ export function SettingsBar() {
                 <Slider min='0' max='30' value={buttonSettings.borderRadius} onChange={handleBorderRadiusChange} className="w-full" />
               </div>
               <div className="small-option-wrapper">
-                <InputNumber maxLength={3} inputId="percent" value={buttonSettings.borderRadius} onValueChange={handleBorderRadiusChange} prefix="%" />
+                <InputNumber inputStyle={{ width: '80px' }} maxLength={3} max={30} inputId="percent" value={buttonSettings.borderRadius} onValueChange={handleBorderRadiusChange} prefix="%" />
               </div>
             </div>
           </div>
