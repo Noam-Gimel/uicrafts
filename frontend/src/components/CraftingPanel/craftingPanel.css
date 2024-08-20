@@ -5,9 +5,7 @@
   background: var(--background);
   color: var(--primary-text);
   border-radius: 10px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
   border: 2px solid rgb(190, 190, 190);
 }
 .settings-bar-header {
@@ -84,6 +82,13 @@
   outline: none;
 }
 .settings-option input[type='color'] {
+  background: none;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 65px;
+}
+.color-input {
   background: none;
   border: none;
   border-radius: 50px;
