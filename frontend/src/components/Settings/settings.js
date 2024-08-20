@@ -10,37 +10,45 @@ import { InputNumber } from 'primereact/inputnumber';
  
 
 export function SettingsBar() {
-  const { buttonSettings, updateButtonSettings } = useContext(ButtonContext);
+  const { 
+    buttonGeneralSettings,
+    updateButtonGeneralSettings,
+    buttonTextSettings,
+    updateButtonTextSettings,
+    hoverEffectSettings,
+    updateHoverEffectSettings
+
+  } = useContext(ButtonContext);
 
   const [activeTab, setActiveTab] = useState('General');
 
   const handleBackgroundColorChange = (e) => {
-    updateButtonSettings('backgroundColor', e.target.value);
+    updateButtonGeneralSettings('backgroundColor', e.target.value);
   };
   const handleTextColorChange = (e) => {
-    updateButtonSettings('textColor', e.target.value);
+    updateButtonTextSettings('textColor', e.target.value);
   };
   const handleButtoTextnChange = (e) => {
-    updateButtonSettings('buttonText', e.target.value);
+    updateButtonTextSettings('buttonText', e.target.value);
   };
 
   const handleBorderRadiusChange = (e) => {
-    updateButtonSettings('borderRadius', e.value);
+    updateButtonGeneralSettings('borderRadius', e.value);
   }
 
   const handleDirectionUp = () => {
-    updateButtonSettings('hoverEffectDirection', 'translateY(-100%)');
+    updateHoverEffectSettings('hoverEffectDirection', 'translateY(-100%)');
   }
   const handleDirectionDown = () => {
-    updateButtonSettings('hoverEffectDirection', 'translateY(100%)');
+    updateHoverEffectSettings('hoverEffectDirection', 'translateY(100%)');
 
   }
   const handleDirectionLeft = () => {
-    updateButtonSettings('hoverEffectDirection', 'translateX(-100%)');
+    updateHoverEffectSettings('hoverEffectDirection', 'translateX(-100%)');
 
   }
   const handleDirectionRight = () => {
-    updateButtonSettings('hoverEffectDirection', 'translateX(100%)');
+    updateHoverEffectSettings('hoverEffectDirection', 'translateX(100%)');
   }
 
 
@@ -80,14 +88,14 @@ export function SettingsBar() {
                   </div>
                 </Divider> */}
                 <label htmlFor="ButtonText">Text</label>
-                <InputText variant="filled" id="ButtonText" placeholder="Craft" value={buttonSettings.buttonText} className="p-inputtext-sm" onChange={handleButtoTextnChange} />
+                <InputText variant="filled" id="ButtonText" placeholder="Craft" value={buttonTextSettings.buttonText} className="p-inputtext-sm" onChange={handleButtoTextnChange} />
             </div>
             <div className="two-options-container">
               <div className="big-option-wrapper">
-                <Slider min='0' max='30' value={buttonSettings.borderRadius} onChange={handleBorderRadiusChange} className="w-full" />
+                <Slider min='0' max='30' value={buttonGeneralSettings.borderRadius} onChange={handleBorderRadiusChange} className="w-full" />
               </div>
-              <div className="small-option-wrapper">
-                <InputNumber inputStyle={{ width: '80px' }} maxLength={3} max={30} inputId="percent" value={buttonSettings.borderRadius} onValueChange={handleBorderRadiusChange} prefix="%" />
+              <div className="small-option-wrapper" style={{ padding: '10px' }}>
+                <InputNumber inputStyle={{ width: '80px' }} maxLength={3} max={30} inputId="percent" value={buttonGeneralSettings.borderRadius} onValueChange={handleBorderRadiusChange} prefix="%" />
               </div>
             </div>
           </div>
@@ -100,7 +108,7 @@ export function SettingsBar() {
               <input 
                 type="color"
                 id="TextColor" 
-                value={buttonSettings.textColor}
+                value={buttonTextSettings.textColor}
                 onChange={handleTextColorChange}
                 />
             </div>
@@ -110,7 +118,7 @@ export function SettingsBar() {
               <input 
                 type="color" 
                 id="bgColor" 
-                value={buttonSettings.backgroundColor}
+                value={buttonGeneralSettings.backgroundColor}
                 onChange={handleBackgroundColorChange}
                 />
             </div>

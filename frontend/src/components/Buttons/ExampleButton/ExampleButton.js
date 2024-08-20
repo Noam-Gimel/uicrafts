@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { ButtonContext } from '../../../context/ButtonContext';
 
 export const ExampleButton = () => {
-    const { buttonSettings } = useContext(ButtonContext);
+    const { buttonTextSettings, buttonGeneralSettings, hoverEffectSettings } = useContext(ButtonContext);
 
     const ButtonStyles = 
     `
@@ -11,9 +11,9 @@ export const ExampleButton = () => {
     padding: 0.9rem 1.8rem;
     font-size: 16px;
     font-weight: 700;
-    color: ${buttonSettings.textColor};
-    border: 3px solid ${buttonSettings.backgroundColor};
-    border-radius: ${buttonSettings.borderRadius}px;
+    color: ${buttonTextSettings.textColor};
+    border: 3px solid ${buttonGeneralSettings.backgroundColor};
+    border-radius: ${buttonGeneralSettings.borderRadius}px;
     cursor: pointer;
     position: relative;
     background-color: transparent;
@@ -30,8 +30,8 @@ export const ExampleButton = () => {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: ${buttonSettings.backgroundColor};
-    transform: ${buttonSettings.hoverEffectDirection};
+    background-color: ${buttonGeneralSettings.backgroundColor};
+    transform: ${hoverEffectSettings.hoverEffectDirection};
     transition: all .3s;
     z-index: -1;
     }
@@ -43,7 +43,7 @@ export const ExampleButton = () => {
   return (
     <>
         <style>{ButtonStyles}</style>
-        <a className={'DemoButton'}>{buttonSettings.buttonText}</a>
+        <a className={'DemoButton'}>{buttonTextSettings.buttonText}</a>
     </>
   );
 };
