@@ -1,3 +1,6 @@
+:root {
+  --inner-content-width: 95%;
+}
 .Container {
     display: flex;
     height: 100vh;
@@ -25,8 +28,8 @@
     justify-content: center;
     justify-items: end;
     align-items: center;
-    height: 85%;
-    width: 95%;
+    height: 88%;
+    width: var(--inner-content-width);
     padding: 6px;
     border-radius: 12px;
     background-color: var(--widget-light);
@@ -38,10 +41,9 @@
     align-items: center;
 }
 .switchContainer {
-    width: 100%;
+    width: var(--inner-content-width);
     display: flex;
     justify-content: flex-end;
-    padding-right: 11px;
 }
 
 /* From Uiverse.io by AmIt-DasIT */ 
@@ -122,3 +124,4 @@
       transform: translateX(1.4em)
     }
   }
+

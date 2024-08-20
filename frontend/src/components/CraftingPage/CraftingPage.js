@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import cn from './CraftingPage.module.css';
-import { SettingsBar } from "../Settings/settings";
+import { CraftingPanel } from "../CraftingPanel/CraftingPanel";
 import { ExampleButton } from "../Buttons/ExampleButton/ExampleButton";
 import { ButtonProvider } from "../../context/ButtonContext";
 
@@ -32,7 +32,7 @@ export function CraftingPage() {
                 </div>
             </div>
             <div className={cn.settingsBarWrapper}>
-                <SettingsBar />
+                <CraftingPanel />
             </div>
         </div>
     </ButtonProvider>
