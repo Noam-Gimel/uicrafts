@@ -1,6 +1,6 @@
 import './App.css';
 import { PrimeReactProvider } from 'primereact/api';
-import { SettingsBar } from './components/Settings/settings';
+import { SettingsBar } from './components/CraftingPanel/CraftingPanel';
 import { CraftingPage } from './components/CraftingPage/CraftingPage';
 // import CraftingPage from './components/ButtonPage/ButtonPage';
 
