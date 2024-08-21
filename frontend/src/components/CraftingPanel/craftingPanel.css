@@ -86,14 +86,14 @@
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  width: 65px;
 }
 .color-input {
   background: none;
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  width: 65px;
+  width: 40px;
+  height: 40px;
 }
 
 .settings-option input::placeholder {
@@ -145,6 +145,8 @@
   align-items: center;
 }
 .small-option-wrapper {
+  display: flex;
+  justify-content: center;
   padding: 3px;
   flex: 30%;
 }
