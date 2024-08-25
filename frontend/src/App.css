@@ -54,3 +54,13 @@
 .p-scrollpanel .p-scrollpanel-bar {
   background: #d1d1d1;
 }
+
+/* Disables border on click for inputs and buttons by default */
+body input:enabled:focus{
+  box-shadow: unset !important;
+  border-color: unset !important;
+}
+body button:enabled:focus{
+  box-shadow: unset !important;
+  border-color: unset !important;
+}
