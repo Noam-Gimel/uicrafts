@@ -78,7 +78,7 @@ const DropdownMenu = () => {
     return (
             <div className="dropdown-menu">
                 {activeMenu === 'main' ? (
-                    <ScrollPanel style={{ maxHeight: '420px' }}>
+                    <div className='menu-content'>
                         <ul className="menu-items">
                             {menuItems.map((item, index) => (
                                 <li key={index} onClick={() => handleItemClick(item)}>
@@ -86,20 +86,19 @@ const DropdownMenu = () => {
                                 </li>
                             ))}
                         </ul>
-                    </ScrollPanel>
+                    </div>
                 ) : (
                     <>
                         <div className='back-header-wrapper'>
                             <div className="back-button" onClick={handleBackClick}>
                                 <i className='pi pi-angle-left' /> Back
                             </div>
-                            {/* <div className='custom-divider' /> */}
                         </div>
-                        <ScrollPanel style={{ maxHeight: '362px' }}>
+                        <div className='sub-menu-content'>
                             <div className="sub-items-menu-contaier">
                                 {activeComponent}
                             </div>
-                        </ScrollPanel>
+                        </div>
                     </>
 
                 )}
