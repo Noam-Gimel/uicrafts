@@ -20,7 +20,7 @@ export const ExampleButton = () => {
     text-decoration: none;
     overflow: hidden;
     z-index: 1;
-    font-family: inherit;
+    font-family: system-ui;
     }
 
     .DemoButton::before {

@@ -44,7 +44,7 @@ export function GeneralHandler() {
               />
             </div>
           </div>
-          <div>Background Color</div>
+          <div className="input-label" >Background Color</div>
             <input 
               type="color" 
               id="bgColor" 

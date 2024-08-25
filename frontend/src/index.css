@@ -1,10 +1,10 @@
 :root {
-  --background: #1B263B;
+  --background: #20232A ;
   --background-light: #3f5a8b;
   --background-lighter: #3a5280;
-  --primary-accent: #2EC4B6;
-  --secondary-accent: #AC3B61;
-  --primary-text: #fffdfb;
+  --primary-accent: #61DAFB ;
+  --secondary-accent: #282C34 ;
+  --primary-text: #FFFFFF ;
 
   --widget-light: #e8e8e8;
   --widget-dark: #212121;
@@ -15,17 +15,23 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Verdana', sans-serif !important;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--background);
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Verdana', sans-serif!important;
+  font-weight: 700;
+  color: #61DAFB;
+}
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Verdana', sans-serif!important;
 }
 
 /* Scrollbar design adjustments */
