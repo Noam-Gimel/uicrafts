@@ -5,6 +5,12 @@
   --primary-accent: #2EC4B6;
   --secondary-accent: #AC3B61;
   --primary-text: #fffdfb;
+
+  --widget-light: #e8e8e8;
+  --widget-dark: #212121;
+
+  --scrollbar-thumb: #9cbaec;
+  --scrollbar-track-piece-color: transparent;
 }
 
 body {
@@ -20,4 +26,21 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Scrollbar design adjustments */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  cursor: pointer;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  background-clip: content-box;
+  min-height: 25px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: var(--scrollbar-track-piece-color);
 }

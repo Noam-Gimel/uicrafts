@@ -1,21 +1,24 @@
 import './App.css';
 import { PrimeReactProvider } from 'primereact/api';
-import { SettingsBar } from './components/Settings/settings';
+import { SettingsBar } from './components/CraftingPanel/CraftingPanel';
+import { CraftingPage } from './components/CraftingPage/CraftingPage';
 // import CraftingPage from './components/ButtonPage/ButtonPage';
 
 
 function App() {
   const value = {
     ripple: true
-};
+  };
   return (
     <>
     <PrimeReactProvider value={value}>
 
-      <div className='tempo-center-container'>
+      <div>
 
         {/* New menu settings */}
-        <SettingsBar />
+        {/* <SettingsBar /> */}
+
+        <CraftingPage />
 
       </div>
 
