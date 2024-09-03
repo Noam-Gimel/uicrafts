@@ -18,8 +18,20 @@ export const ButtonProvider = ({ children }) => {
   });
 
   const [hoverEffectSettings, setHoverEffectSettings ] = useState({
-    hoverEffectDirection: 'translateX(-100%)'
+    hoverEffectDirection: 'translateX(-100%)',
+    transitionType: { name: 'all' }
   });
+
+  // General options
+  const generalOptions = {
+    transitionTypeOptions: [
+      {name: 'all'},
+      {name: 'ease'},
+      {name: 'ease-in-out'},
+      {name: 'ease-in'},
+      {name: 'ease-out'}
+    ],
+  }
 
   const updateButtonGeneralSettings = (key, value) => {
     setButtonGeneralSettings((prevSettings) => ({
@@ -51,7 +63,8 @@ export const ButtonProvider = ({ children }) => {
         buttonTextSettings,
         updateButtonTextSettings,
         hoverEffectSettings,
-        updateHoverEffectSettings
+        updateHoverEffectSettings,
+        generalOptions
       }}
     >
       {children}

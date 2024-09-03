@@ -188,6 +188,10 @@
   flex-grow: 4;
 }
 
+.section-row {
+  padding: 7px;
+}
+
 /* .input-label { */
   /* #TODO
 } */

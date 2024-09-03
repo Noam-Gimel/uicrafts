@@ -58,7 +58,7 @@ export function GeneralHandler() {
               <Slider min='0' max='30' value={buttonGeneralSettings.borderRadius} onChange={handleBorderRadiusChange} className="w-full" />
             </div>
             <div className="small-option-wrapper" style={{ padding: '10px' }}>
-              <InputNumber showButtons inputStyle={{ width: '80px' }} maxLength={3} max={30} inputId="percent" value={buttonGeneralSettings.borderRadius} onValueChange={handleBorderRadiusChange} prefix="%" />
+              <InputNumber className="p-inputtext-sm" showButtons inputStyle={{ width: '80px' }} maxLength={3} min={0} max={30} inputId="percent" value={buttonGeneralSettings.borderRadius} onValueChange={handleBorderRadiusChange} prefix="%" />
             </div>
           </div>
         </>

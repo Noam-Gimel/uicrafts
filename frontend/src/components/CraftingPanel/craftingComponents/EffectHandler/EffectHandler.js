@@ -1,9 +1,11 @@
 import React, { useState, useContext } from "react";
 import { Button } from "primereact/button";
+import { Dropdown } from 'primereact/dropdown';
 import { ButtonContext } from "../../../../context/ButtonContext";
 
+
 export function EffectHandler() {
-    const { updateHoverEffectSettings } = useContext(ButtonContext);
+    const { hoverEffectSettings, updateHoverEffectSettings, generalOptions } = useContext(ButtonContext);
 
     const handleDirectionUp = () => {
         updateHoverEffectSettings('hoverEffectDirection', 'translateY(-100%)');
@@ -18,6 +20,11 @@ export function EffectHandler() {
       }
       const handleDirectionRight = () => {
         updateHoverEffectSettings('hoverEffectDirection', 'translateX(100%)');
+      }
+
+      const handleTransitionTypeChange = (e) => {
+        console.log(hoverEffectSettings.transitionType);
+        updateHoverEffectSettings('transitionType', e.value);
       }
 
     return (
@@ -36,6 +43,11 @@ export function EffectHandler() {
               <div className='arrow-button'>
                 <Button className="arrow-button-style" icon="pi pi-angle-up" rounded text raised onClick={handleDirectionDown} />
               </div>
+          </div>
+          <div className="text-divider">Transition</div>
+          <div className="section-row">
+              <Dropdown value={hoverEffectSettings.transitionType} onChange={handleTransitionTypeChange} options={generalOptions.transitionTypeOptions} optionLabel="name" 
+                    placeholder="Transition type" className="p-inputtext-sm" />
           </div>
         </>
     )

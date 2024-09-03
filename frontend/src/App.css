@@ -54,13 +54,35 @@
 .p-scrollpanel .p-scrollpanel-bar {
   background: #d1d1d1;
 }
+.p-dropdown {
+  min-width: 10rem;
+  box-shadow: unset !important;
+}
+
+.p-dropdown .p-dropdown-trigger {
+  background: #78676724;
+  color: #6b7280;
+  width: 2rem;
+}
+
+/* Up and down arrows in the inputNumber component */
+.p-inputnumber-buttons-stacked .p-inputnumber-button-group .p-button.p-inputnumber-button {
+  width: 2rem;
+}
+
+
+
 
 /* Disables border on click for inputs and buttons by default */
 body input:enabled:focus{
   box-shadow: unset !important;
-  border-color: unset !important;
+  /* border-color: unset !important; */
 }
 body button:enabled:focus{
   box-shadow: unset !important;
-  border-color: unset !important;
+  /* border-color: unset !important; */
+}
+body .p-dropdown:enabled:focus{
+  box-shadow: unset !important;
+  /* border-color: unset !important; */
 }
