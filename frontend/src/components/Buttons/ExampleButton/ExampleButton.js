@@ -32,7 +32,7 @@ export const ExampleButton = () => {
     height: 100%;
     background-color: ${buttonGeneralSettings.backgroundColor};
     transform: ${hoverEffectSettings.hoverEffectDirection};
-    transition: ${hoverEffectSettings.transitionType.name} .3s;
+    transition: ${hoverEffectSettings.transitionType.name} ${hoverEffectSettings.transitionDuration}s;
     z-index: -1;
     }
 

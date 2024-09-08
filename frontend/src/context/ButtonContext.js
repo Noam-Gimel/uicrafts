@@ -4,6 +4,17 @@ export const ButtonContext = createContext();
 
 export const ButtonProvider = ({ children }) => {
 
+    // General options
+    const generalOptions = {
+      transitionTypeOptions: [
+        {name: 'all'},
+        {name: 'ease'},
+        {name: 'ease-in-out'},
+        {name: 'ease-in'},
+        {name: 'ease-out'}
+      ],
+    }
+
   // Setting button states 
   const [buttonGeneralSettings, setButtonGeneralSettings] = useState({
     backgroundColor: '#CF6565',
@@ -19,20 +30,14 @@ export const ButtonProvider = ({ children }) => {
 
   const [hoverEffectSettings, setHoverEffectSettings ] = useState({
     hoverEffectDirection: 'translateX(-100%)',
-    transitionType: { name: 'all' }
+    transitionType: { name: 'all' },
+    transitionDuration: '0.3'
   });
 
-  // General options
-  const generalOptions = {
-    transitionTypeOptions: [
-      {name: 'all'},
-      {name: 'ease'},
-      {name: 'ease-in-out'},
-      {name: 'ease-in'},
-      {name: 'ease-out'}
-    ],
-  }
 
+  // Update functions; Used instead of setState()
+  // Usage - updateButtonGeneralSettings('[Key to replace]', [New value]);
+  // Ex. - updateButtonGeneralSettings('backgroundColor', e.target.value);
   const updateButtonGeneralSettings = (key, value) => {
     setButtonGeneralSettings((prevSettings) => ({
       ...prevSettings,

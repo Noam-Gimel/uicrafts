@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Button } from "primereact/button";
 import { Dropdown } from 'primereact/dropdown';
+import { InputNumber } from 'primereact/inputnumber';
 import { ButtonContext } from "../../../../context/ButtonContext";
 
 
@@ -27,6 +28,10 @@ export function EffectHandler() {
         updateHoverEffectSettings('transitionType', e.value);
       }
 
+      const handleTransitionDurationChange = (e) => {
+        updateHoverEffectSettings('transitionDuration', e.value);
+      }
+
     return (
         <>
           <div className="text-divider">Effect Direction</div>
@@ -45,9 +50,19 @@ export function EffectHandler() {
               </div>
           </div>
           <div className="text-divider">Transition</div>
-          <div className="section-row">
-              <Dropdown value={hoverEffectSettings.transitionType} onChange={handleTransitionTypeChange} options={generalOptions.transitionTypeOptions} optionLabel="name" 
-                    placeholder="Transition type" className="p-inputtext-sm" />
+          {/* <div className="section-row">      
+              <Dropdown value={hoverEffectSettings.transitionType} onChange={handleTransitionTypeChange} inputId="transitionType" options={generalOptions.transitionTypeOptions} optionLabel="name" 
+                    placeholder="Transition type" className="p-inputtext-sm w-full" />      
+          </div> */}
+
+          <div className="two-options-container">
+            <div className="big-option-wrapper">
+              <Dropdown value={hoverEffectSettings.transitionType} onChange={handleTransitionTypeChange} inputId="transitionType" options={generalOptions.transitionTypeOptions} optionLabel="name" 
+                      placeholder="Transition type" className="p-inputtext-sm w-full" />   
+            </div>
+            <div className="small-option-wrapper" style={{ padding: '10px' }}>
+              <InputNumber className="p-inputtext-sm" showButtons inputStyle={{ width: '80px' }} min={0} max={9} inputId="transitionDuration" step={0.05} value={hoverEffectSettings.transitionDuration} onValueChange={handleTransitionDurationChange} suffix="s" />
+            </div>
           </div>
         </>
     )

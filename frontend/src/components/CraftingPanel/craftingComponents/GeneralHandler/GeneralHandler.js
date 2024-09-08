@@ -25,7 +25,7 @@ export function GeneralHandler() {
 
       const handleBorderRadiusChange = (e) => {
         updateButtonGeneralSettings('borderRadius', e.value);
-    }
+      }
 
     return (
         <>
