@@ -20,7 +20,7 @@ export const ExampleButton = () => {
     text-decoration: none;
     overflow: hidden;
     z-index: 1;
-    font-family: inherit;
+    font-family: system-ui;
     }
 
     .DemoButton::before {
@@ -32,7 +32,7 @@ export const ExampleButton = () => {
     height: 100%;
     background-color: ${buttonGeneralSettings.backgroundColor};
     transform: ${hoverEffectSettings.hoverEffectDirection};
-    transition: all .3s;
+    transition: ${hoverEffectSettings.transitionType.name} ${hoverEffectSettings.transitionDuration}s;
     z-index: -1;
     }
 

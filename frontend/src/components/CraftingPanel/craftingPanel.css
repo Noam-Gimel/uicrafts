@@ -38,6 +38,7 @@
   cursor: pointer;
   outline: none;
   border-radius: 7px 7px 0px 0px;
+  font-family: inherit;
 }
 .tab-button:hover {
   background-color: rgba(138, 138, 138, 0.493);
@@ -167,6 +168,7 @@
   display: flex;
   align-items: center;
   font-size: 0.9375rem;
+  font-family: monospace;
   color: #e3e3e3;
 }
 
@@ -185,3 +187,11 @@
   margin-left: var(--text-divider-gap);
   flex-grow: 4;
 }
+
+.section-row {
+  padding: 7px;
+}
+
+/* .input-label { */
+  /* #TODO
+} */
