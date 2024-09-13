@@ -24,7 +24,6 @@ export function EffectHandler() {
       }
 
       const handleTransitionTypeChange = (e) => {
-        console.log(hoverEffectSettings.transitionType);
         updateHoverEffectSettings('transitionType', e.value);
       }
 

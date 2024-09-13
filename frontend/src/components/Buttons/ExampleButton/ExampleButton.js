@@ -3,14 +3,15 @@ import { ButtonContext } from '../../../context/ButtonContext';
 
 export const ExampleButton = () => {
     const { buttonTextSettings, buttonGeneralSettings, hoverEffectSettings } = useContext(ButtonContext);
+    // console.log(buttonTextSettings.font.size, buttonTextSettings.font.prefix, buttonTextSettings.font.weight, buttonTextSettings.font.familyType);
 
     const ButtonStyles = 
     `
     .DemoButton {
     display: inline-block;
     padding: 0.9rem 1.8rem;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: ${buttonTextSettings.font.size}${buttonTextSettings.font.unit};
+    font-weight: ${buttonTextSettings.font.weight};
     color: ${buttonTextSettings.textColor};
     border: 3px solid ${buttonGeneralSettings.backgroundColor};
     border-radius: ${buttonGeneralSettings.borderRadius}px;
@@ -20,7 +21,7 @@ export const ExampleButton = () => {
     text-decoration: none;
     overflow: hidden;
     z-index: 1;
-    font-family: system-ui;
+    font-family: ${buttonTextSettings.font.familyType};
     }
 
     .DemoButton::before {

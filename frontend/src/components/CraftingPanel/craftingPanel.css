@@ -192,6 +192,15 @@
   padding: 7px;
 }
 
+.font-size-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.p-field {
+  margin-bottom: 1rem;
+}
+
 /* .input-label { */
   /* #TODO
 } */

@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { InputText } from "primereact/inputtext";
 import { InputNumber } from "primereact/inputnumber";
 import { Slider } from "primereact/slider";
+import { Dropdown } from "primereact/dropdown";
 import { ButtonContext } from "../../../../context/ButtonContext";
 
 export function GeneralHandler() {
@@ -9,7 +10,8 @@ export function GeneralHandler() {
       buttonTextSettings,
       updateButtonTextSettings, 
       buttonGeneralSettings, 
-      updateButtonGeneralSettings
+      updateButtonGeneralSettings,
+      generalOptions
     } = useContext(ButtonContext);
 
     const handleTextColorChange = (e) => {
@@ -25,6 +27,13 @@ export function GeneralHandler() {
 
       const handleBorderRadiusChange = (e) => {
         updateButtonGeneralSettings('borderRadius', e.value);
+      }
+
+      const handleFontSizeChange = (e) => {
+        updateButtonTextSettings('font.size', e.value);
+      }
+      const handleUnitTypeChange = (e) => {
+        updateButtonTextSettings('font.unit', e.value);
       }
 
     return (
@@ -44,14 +53,45 @@ export function GeneralHandler() {
               />
             </div>
           </div>
-          <div className="input-label" >Background Color</div>
-            <input 
-              type="color" 
-              id="bgColor" 
-              value={buttonGeneralSettings.backgroundColor}
-              className="color-input"
-              onChange={handleBackgroundColorChange}
-            />
+          <div className="two-options-container">
+            <div className="big-option-wrapper">
+              <div className="input-label" >Background Color</div>
+            </div>
+            <div className="small-option-wrapper" style={{ padding: '10px' }}>
+              <input 
+                type="color" 
+                id="bgColor" 
+                value={buttonGeneralSettings.backgroundColor}
+                className="color-input"
+                onChange={handleBackgroundColorChange}
+              />
+            </div>
+          </div>
+          <div className="font-size-selector">
+            <div className="p-field">
+              <label htmlFor="font-size">Font Size</label>
+              <InputNumber
+                id="font-size"
+                value={buttonTextSettings.font.size}
+                onValueChange={handleFontSizeChange}
+                min={1}
+                max={100}
+                className="p-inputtext-sm"
+              />
+            </div>
+            <div className="p-field">
+              <label htmlFor="unit">Unit</label>
+              <Dropdown
+                id="unit"
+                value={buttonTextSettings.font.unit}
+                options={generalOptions.unitsOptions}
+                onChange={handleUnitTypeChange}
+                placeholder="Select Unit"
+                className="p-inputtext-sm w-full"
+              />
+            </div>
+          </div>
+
           <div className="text-divider">Border</div>
           <div className="two-options-container">
             <div className="big-option-wrapper">

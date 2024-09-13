@@ -13,6 +13,12 @@ export const ButtonProvider = ({ children }) => {
         {name: 'ease-in'},
         {name: 'ease-out'}
       ],
+      unitsOptions: [
+        { label: 'px', value: 'px' },
+        { label: 'rem', value: 'rem' },
+        { label: 'em', value: 'em' },
+        { label: '%', value: '%' },
+      ]
     }
 
   // Setting button states 
@@ -24,8 +30,10 @@ export const ButtonProvider = ({ children }) => {
   const [buttonTextSettings, setButtonTextSettings] = useState({
     textColor: '#ffffff',
     buttonText: 'Button',
-    fontSize: '16px',
-    fontWeight: '500'
+    font: { size: 16, unit: 'px', familyType: 'system-ui', weight: '700' },
+    // fontSize: '16px',
+    // fontWeight: '700',
+    padding: '0.9rem 1.8rem'
   });
 
   const [hoverEffectSettings, setHoverEffectSettings ] = useState({
@@ -45,12 +53,35 @@ export const ButtonProvider = ({ children }) => {
     }));
   };
 
+  // Enables nested value posability - updateButtonTextSettings('font.unit', e.value);
   const updateButtonTextSettings = (key, value) => {
-    setButtonTextSettings((prevSettings) => ({
-      ...prevSettings,
-      [key]: value,
-    }));
+    setButtonTextSettings((prevSettings) => {
+      if (key.includes('.')) {
+        const keys = key.split('.');
+
+        let newSettings = { ...prevSettings };
+
+        let current = newSettings;
+        for (let i = 0; i < keys.length - 1; i++) {
+          current[keys[i]] = { ...current[keys[i]] };
+          current = current[keys[i]];
+        }
+        current[keys[keys.length - 1]] = value;
+  
+        return newSettings;
+      } else {
+        return { ...prevSettings, [key]: value };
+      }
+    });
   };
+
+  // NO nested value posability - updateButtonTextSettings('font.unit', e.value);
+  // const updateButtonTextSettings = (key, value) => {
+  //   setButtonTextSettings((prevSettings) => ({
+  //     ...prevSettings,
+  //     [key]: value,
+  //   }));
+  // };
 
   const updateHoverEffectSettings = (key, value) => {
     setHoverEffectSettings((prevSettings) => ({
