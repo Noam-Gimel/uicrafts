@@ -1,3 +1,18 @@
+.crafting-panel-wrapper {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+}
+.export-button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  width: 80%;
+}
+.export-button {
+  /* width: 100%; */
+  width: auto;
+}
 .settings-bar {
   width: 100%;
   max-width: 350px;

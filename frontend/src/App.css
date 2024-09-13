@@ -65,6 +65,10 @@
   width: 2rem;
 }
 
+.p-dialog .p-dialog-header {
+  background-color: #93bcff;
+}
+
 /* Up and down arrows in the inputNumber component */
 .p-inputnumber-buttons-stacked .p-inputnumber-button-group .p-button.p-inputnumber-button {
   width: 2rem;
