@@ -59,7 +59,7 @@ export function EffectHandler() {
               <Dropdown value={hoverEffectSettings.transitionType} onChange={handleTransitionTypeChange} inputId="transitionType" options={generalOptions.transitionTypeOptions} optionLabel="name" 
                       placeholder="Transition type" className="p-inputtext-sm w-full" />   
             </div>
-            <div className="small-option-wrapper" style={{ padding: '10px' }}>
+            <div className="small-option-wrapper">
               <InputNumber className="p-inputtext-sm" showButtons inputStyle={{ width: '80px' }} min={0} max={9} inputId="transitionDuration" step={0.05} value={hoverEffectSettings.transitionDuration} onValueChange={handleTransitionDurationChange} suffix="s" />
             </div>
           </div>
