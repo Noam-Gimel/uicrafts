@@ -38,6 +38,9 @@ export function GeneralHandler() {
       const handleFontWeightChange = (e) => {
         updateButtonTextSettings('font.weight', e.value);
       }
+      const handleFamilyFontChange = (e) => {
+        updateButtonTextSettings('font.familyType', e.value);
+      }
 
     return (
         <>
@@ -93,7 +96,17 @@ export function GeneralHandler() {
             </div>
             <InputNumber className="p-inputtext-sm" showButtons inputStyle={{ width: '80px' }} min={100} max={900} inputId="fontWeight" step={50} value={buttonTextSettings.font.weight} onValueChange={handleFontWeightChange} />
           </div>
-
+          <div className="p-field">
+            <Dropdown
+              id="font-family"
+              value={buttonTextSettings.font.familyType}
+              options={generalOptions.fontOptions}
+              onChange={handleFamilyFontChange}
+              placeholder="Select Font"
+              filter
+              variant="filled"
+            />
+          </div>
           <div className="text-divider">Border</div>
           <div className="two-options-container">
             <div className="big-option-wrapper">
@@ -103,6 +116,9 @@ export function GeneralHandler() {
               <InputNumber className="p-inputtext-sm" showButtons inputStyle={{ width: '80px' }} maxLength={3} min={0} max={30} inputId="percent" value={buttonGeneralSettings.borderRadius} onValueChange={handleBorderRadiusChange} prefix="%" />
             </div>
           </div>
+          <div className="text-divider">Icon</div>
+
+
         </>
     )
 

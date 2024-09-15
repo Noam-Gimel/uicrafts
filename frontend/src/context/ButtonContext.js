@@ -18,6 +18,19 @@ export const ButtonProvider = ({ children }) => {
         { label: 'rem', value: 'rem' },
         { label: 'em', value: 'em' },
         { label: '%', value: '%' },
+      ],
+      fontOptions: [
+        { label: 'None', value: 'Unset' },
+        { label: 'Arial (sans-serif)', value: 'Arial, sans-serif' },
+        { label: 'Verdana (sans-serif)', value: 'Verdana, sans-serif' },
+        { label: 'Tahoma (sans-serif)', value: 'Tahoma, sans-serif' },
+        { label: 'system-ui', value: 'system-ui' },
+        { label: 'Trebuchet MS (sans-serif)', value: 'Trebuchet MS, sans-serif' },
+        { label: 'Times New Roman (serif)', value: 'Times New Roman, serif' },
+        { label: 'Georgia (serif)', value: 'Georgia, serif' },
+        { label: 'Garamond (serif)', value: 'Garamond, serif' },
+        { label: 'Courier New (monospace)', value: 'Courier New, monospace' },
+        { label: 'Brush Script MT (cursive)', value: 'Brush Script MT, cursive' },
       ]
     }
 
