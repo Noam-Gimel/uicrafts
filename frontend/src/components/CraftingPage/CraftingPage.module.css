@@ -43,8 +43,13 @@
 .switchContainer {
     width: var(--inner-content-width);
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
 }
+.ResetToDefaultButton {
+  color: white;
+}
+
 
 /* From Uiverse.io by AmIt-DasIT */ 
 /* The switch - the box around the slider */
