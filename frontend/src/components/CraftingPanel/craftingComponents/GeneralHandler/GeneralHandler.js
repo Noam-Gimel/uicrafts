@@ -35,6 +35,9 @@ export function GeneralHandler() {
       const handleUnitTypeChange = (e) => {
         updateButtonTextSettings('font.unit', e.value);
       }
+      const handleFontWeightChange = (e) => {
+        updateButtonTextSettings('font.weight', e.value);
+      }
 
     return (
         <>
@@ -88,6 +91,7 @@ export function GeneralHandler() {
                 className="p-inputtext-sm w-full"
               />
             </div>
+            <InputNumber className="p-inputtext-sm" showButtons inputStyle={{ width: '80px' }} min={100} max={900} inputId="fontWeight" step={50} value={buttonTextSettings.font.weight} onValueChange={handleFontWeightChange} />
           </div>
 
           <div className="text-divider">Border</div>
