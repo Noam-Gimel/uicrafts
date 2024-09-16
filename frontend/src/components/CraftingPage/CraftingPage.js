@@ -21,7 +21,7 @@ export function CraftingPage() {
         <div className={cn.Container}>
             <div className={cn.buttonDesignWrapper}>
                 <div className={cn.buttonFrame}>
-                    <div className={cn.switchContainer}>
+                    <div className={cn.UpperContainer}>
                         <Button className={cn.ResetToDefaultButton} label="Reset to default" icon='pi pi-refresh' text/>
                         <label className={cn.lightSwitch}>
                             <input type="checkbox" onChange={onBackgroundChange}/>
@@ -30,6 +30,15 @@ export function CraftingPage() {
                     </div>
                     <div className={cn.buttonInnerFrame} style={{ backgroundColor: innerFrameColor }}>
                         <ExampleButton />
+                    </div>
+                    <div className={cn.LowerContainer}>
+                        <div className={cn.RatingWrapper}>
+                            <i className="pi pi-thumbs-up" style={{ fontSize: '1.3rem' }} />
+                            <i className="pi pi-thumbs-down" style={{ fontSize: '1.3rem' }} />
+                        </div>
+                        <div className={cn.SubmitIssueWrapper}>
+                            <p>Having a problem? You can <a>Submit an issue</a></p>
+                        </div>
                     </div>
                 </div>
             </div>

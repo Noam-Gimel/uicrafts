@@ -40,11 +40,31 @@
     justify-content: center;
     align-items: center;
 }
-.switchContainer {
+.UpperContainer {
     width: var(--inner-content-width);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 6px;
+}
+.LowerContainer {
+  width: var(--inner-content-width);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6px;
+}
+.RatingWrapper {
+  display: flex;
+  gap: 24px;
+  padding-left: 32px;
+}
+.SubmitIssueWrapper {
+
+}
+.SubmitIssueWrapper a {
+  text-decoration: underline;
+  cursor: pointer;
 }
 .ResetToDefaultButton {
   color: white;
