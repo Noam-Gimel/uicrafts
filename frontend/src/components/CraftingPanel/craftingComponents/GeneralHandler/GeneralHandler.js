@@ -4,6 +4,7 @@ import { InputNumber } from "primereact/inputnumber";
 import { Slider } from "primereact/slider";
 import { Dropdown } from "primereact/dropdown";
 import { ButtonContext } from "../../../../context/ButtonContext";
+import { Checkbox } from "primereact/checkbox";
 
 export function GeneralHandler() {
     const { 
@@ -13,6 +14,8 @@ export function GeneralHandler() {
       updateButtonGeneralSettings,
       generalOptions
     } = useContext(ButtonContext);
+
+    const [isIconEnabled, setIsIconEnabled] = useState(false);
 
     const handleTextColorChange = (e) => {
         updateButtonTextSettings('textColor', e.target.value);
@@ -117,8 +120,20 @@ export function GeneralHandler() {
             </div>
           </div>
           <div className="text-divider">Icon</div>
-
-
+          <div className="checkboxWrapper">
+            <Checkbox 
+              onChange={e => setIsIconEnabled(e.checked)} 
+              variant="filled" 
+              checked={isIconEnabled} 
+              inputId='iconDisplay'
+              />
+              <label htmlFor="iconDisplay" className="ms-2">Enable Icon Display</label>
+          </div>
+          {isIconEnabled && (
+            <div className="iconSectionWrapper">
+              <button>Yo</button>
+            </div>
+          )}
         </>
     )
 

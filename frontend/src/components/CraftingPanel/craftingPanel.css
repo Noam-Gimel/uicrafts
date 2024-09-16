@@ -204,3 +204,12 @@
 /* .input-label { */
   /* #TODO
 } */
+
+.checkboxWrapper {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+.iconSectionWrapper {
+  
+}
