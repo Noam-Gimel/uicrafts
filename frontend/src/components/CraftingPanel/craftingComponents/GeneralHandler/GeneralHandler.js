@@ -85,6 +85,7 @@ export function GeneralHandler() {
                 min={1}
                 max={100}
                 className="p-inputtext-sm"
+                showButtons
               />
             </div>
             <div className="p-field">
