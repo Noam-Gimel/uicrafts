@@ -21,7 +21,7 @@ export function CraftingPanel() {
             className={`tab-button ${activeTab === 'General' ? 'active' : ''}`}
             onClick={() => setActiveTab('General')}
           >
-            Generally
+            General
           </button>
           <button
             className={`tab-button ${activeTab === 'Effect' ? 'active' : ''}`}
