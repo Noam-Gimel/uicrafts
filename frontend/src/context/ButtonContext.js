@@ -38,6 +38,7 @@ export const ButtonProvider = ({ children }) => {
   const [buttonGeneralSettings, setButtonGeneralSettings] = useState({
     backgroundColor: '#CF6565',
     borderRadius: '0'
+    
   });
 
   const [buttonTextSettings, setButtonTextSettings] = useState({

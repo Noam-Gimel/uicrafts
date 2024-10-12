@@ -30,10 +30,10 @@ export function CraftingPanel() {
             Effect
           </button>
           <button
-            className={`tab-button ${activeTab === 'Extra' ? 'active' : ''}`}
-            onClick={() => setActiveTab('Extra')}
+            className={`tab-button ${activeTab === 'Advanced' ? 'active' : ''}`}
+            onClick={() => setActiveTab('Advanced')}
           >
-            Extra
+            Advanced
           </button>
         </div>
       </div>
@@ -45,13 +45,11 @@ export function CraftingPanel() {
         )}
         {activeTab === 'Effect' && (
           <div className="settings-options">
-            <div className="settings-option">
               <EffectHandler />
-            </div>
           </div>
         )}
-        {activeTab === 'Extra' && (
-          <DropdownMenu />
+        {activeTab === 'Advanced' && (
+            <DropdownMenu />
         )}
       </div>
     </div>

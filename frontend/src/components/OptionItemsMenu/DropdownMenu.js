@@ -8,9 +8,9 @@ import { ScrollPanel } from 'primereact/scrollpanel';
 
 const SingleInput = () => {
     return (
-        <div className='sub-item-wrapper'>
-            <input type="text" placeholder="Input 1" />
-        </div>
+        <div className="text-divider">:active</div>
+        
+        
     );
 };
 
@@ -54,7 +54,7 @@ const DropdownMenu = () => {
     const [activeComponent, setActiveComponent] = useState(null);
 
     const menuItems = [
-        { name: 'Item 1', component: <SingleInput /> },
+        { name: 'Click Effects', component: <SingleInput /> },
         { name: 'Item 2', component: <DoubleInput /> },
         { name: 'Item 3', component: <TripleInput /> },
         { name: 'Item 4', component: <TripleInput /> },
@@ -94,10 +94,10 @@ const DropdownMenu = () => {
                                 <i className='pi pi-angle-left' /> Back
                             </div>
                         </div>
+                        <div className='sub-menu-container'>
                         <div className='sub-menu-content'>
-                            <div className="sub-items-menu-contaier">
-                                {activeComponent}
-                            </div>
+                            {activeComponent}
+                        </div>
                         </div>
                     </>
 
