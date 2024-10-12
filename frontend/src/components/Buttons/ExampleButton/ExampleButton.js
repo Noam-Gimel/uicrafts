@@ -22,7 +22,6 @@ export const ExampleButton = () => {
       overflow: hidden;
       z-index: 1;
       font-family: ${buttonTextSettings.font.familyType};
-      // transition: all 0.3s;
     }
 
     .DemoButton::before {
@@ -40,9 +39,6 @@ export const ExampleButton = () => {
 
     .DemoButton:hover::before {
       transform: translateX(0);
-    }
-    .DemoButton:active {
-      transform: scale(0.9);
     }
     `
     
